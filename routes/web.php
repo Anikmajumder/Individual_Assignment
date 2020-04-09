@@ -32,3 +32,22 @@ Route::post('/signup', 'Signup@signup');
 
 Route::get('/logout', 'Logout@index');
 
+Route::group(['middleware'=>['session']], function(){
+
+
+	Route::group(['middleware'=>['admin']], function(){
+		Route::get('/admin', 'AdminHome@index');
+		Route::get('/admin/profile', 'AdminHome@profile');
+		Route::post('/admin/profile', 'AdminHome@profileUpdate');
+
+	});
+
+	Route::group(['middleware'=>['user']], function(){
+		Route::get('/user', function()
+		{
+			echo "User type working";
+		});
+	});
+
+	
+});
