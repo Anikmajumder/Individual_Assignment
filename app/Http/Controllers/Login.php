@@ -40,7 +40,7 @@ class Login extends Controller
     		if ($check!=null) {
     			if ($check->toArray()['type']=='1') {
                     $req->session()->put('password', md5($req->password));
-                    $req->session()->put('type', $req->username);
+                    $req->session()->put('userid', $req->username);
                     $req->session()->put('type', $check->toArray()['type']);
                     return redirect('/admin');
 
