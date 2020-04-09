@@ -19,6 +19,47 @@ class AdminHome extends Controller
    		return view('admin.profile', $data);
    	}
 
-   	
+   	public function profileUpdate(Request $req)
+   	{
+
+   		$validate = Validator::make($req->all(), [
+			'name' => 'required|max:8',
+			'username' => 'required|max:8',
+            'password' => 'required',
+            'email' => 'required|email'
+        ]);
+
+    	if ($validate->fails()) {
+    		return redirect('/admin/profile')
+                        ->withErrors($validate)
+                        ->withInput();
+    	}
+
+    	else
+    	{
+    		$data =User::where('username',$req->session()->get('userid'))->first();
+   			$user = User::find($data->toArray()['id']);
+
+			   $user->username = $req->username;
+			   $user->name = $req->name;
+   			   $user->email = $req->email;
+
+   			
+   				if ($user->save()) {
+	   				return redirect('/admin/profile')->withErrors("Profile Update successfully");
+		   		}
+		   		else
+		   		{
+		   			echo "Something wrong";
+		   		}
+   			
+
+	   		
+    	}
+   		
+   	}
+
+
+   
 
 }
