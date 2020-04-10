@@ -9,7 +9,7 @@
 		<br>
 		<fieldset>
 			<a href="/admin/profile">Profile</a> <br>
-			<a href="/admin/userlist">All User</a><br>
+			<a href="/admin/mamberlist">All Mamber</a><br>
 			 <a href="/logout">logout</a>
 		</fieldset>
 	</center>

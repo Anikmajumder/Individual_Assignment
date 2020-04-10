@@ -60,6 +60,12 @@ class AdminHome extends Controller
    	}
 
 
-   
+	   public function mamberlist()
+   	{
+   		$data = User::all();
+
+   		return view('admin.mamberlist',['details'=>$data]);
+   	}
+
 
 }
