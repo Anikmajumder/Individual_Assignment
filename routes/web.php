@@ -42,6 +42,8 @@ Route::group(['middleware'=>['session']], function(){
 		Route::post('/admin/profile', 'AdminHome@profileUpdate');
 		Route::get('/admin/mamberlist', 'AdminHome@userlist');
 		Route::get('/admin/mamberlist/delete/{id}', 'AdminHome@deleteUser');
+		Route::get('admin/resturent/addresturent', 'Resturent@addresturent');
+		Route::post('admin/resturent/addresturent', 'Resturent@add');
 
 	});
 

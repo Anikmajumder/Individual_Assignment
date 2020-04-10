@@ -8,9 +8,7 @@
 		<h1>Welcome {{ Session::get('userid') }}</h1>
 		<br>
 		<fieldset>
-			<a href="/admin/profile">Profile</a> <br>
-			<a href="/admin/mamberlist">All Mamber</a><br>
-			 <a href="/logout">logout</a>
+			<a href="/admin/profile">Profile</a> || <a href="/admin/mamberlist">All mamber</a>|| <a href="/admin/resturent">Resturent</a>|| <a href="/logout">logout</a>
 		</fieldset>
 	</center>
 

@@ -13,7 +13,7 @@
 			</tr>
 		<tr>
 			<td>Username :</td>
-			<td><input type="text" name="Username" value="{{$username}}" disabled></td>
+			<td><input type="text" name="username" value="{{$username}}" ></td>
 		</tr>
 		<tr>
 			<td>FullName :</td>
@@ -26,7 +26,7 @@
 		
 		<tr>
 			<td>Password :</td>
-			<td><input type="password" name="password" value=""></td>
+			<td><input type="password" name="password" value="{{$password}}"></td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center"><input type="submit" name="submit" value="Update"></td>

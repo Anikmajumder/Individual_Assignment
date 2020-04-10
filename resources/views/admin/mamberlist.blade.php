@@ -5,7 +5,7 @@
 </head>
 <body>
 
-	<h1>Mamber List</h1>
+	<h1>User List</h1>
 	<table border="1">
 		<tr>
 			<th>UserName</th>
@@ -16,6 +16,7 @@
 		</tr>
 		@for($i=0; $i< count($details) ; $i++)
 			<tr>
+			
 				<td>{{$details[$i]['username']}}</td>
 				<td>{{$details[$i]['name']}}</td>
 				<td>{{$details[$i]['email']}}</td>
@@ -24,7 +25,7 @@
 					@else
 					<td>Mamber</td>
 				@endif
-				<td><a href="/admin/mamberlist/delete/{{$details[$i]['id']}}">Delete</a></td>
+				<td><a href="/admin/mamberlist/delete/{{$details[$i]['userId']}}">Delete</a></td>
 			</tr>
 		@endfor
 	</table>
