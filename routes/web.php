@@ -47,11 +47,13 @@ Route::group(['middleware'=>['session']], function(){
 
 	});
 
-	Route::group(['middleware'=>['user']], function(){
-		Route::get('/user', function()
-		{
-			echo "User type working";
-		});
+	Route::group(['middleware'=>['mamber']], function(){
+		
+		
+		Route::get('/mamber', 'MamberHome@index');
+		
+		
+
 	});
 
 	
