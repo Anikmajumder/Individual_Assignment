@@ -37,13 +37,13 @@ Route::group(['middleware'=>['session']], function(){
 
 	Route::group(['middleware'=>['admin']], function(){
 		
-		Route::get('/admin', 'AdminHome@index');
-		Route::get('/admin/profile', 'AdminHome@profile');
-		Route::post('/admin/profile', 'AdminHome@profileUpdate');
-		Route::get('/admin/mamberlist', 'AdminHome@userlist');
-		Route::get('/admin/mamberlist/delete/{id}', 'AdminHome@deleteUser');
+		Route::get('/admin/resturent', 'Resturent@index');
+		Route::get('/admin/resturent/resturentlist', 'Resturent@resturentlist');
 		Route::get('admin/resturent/addresturent', 'Resturent@addresturent');
 		Route::post('admin/resturent/addresturent', 'Resturent@add');
+		Route::get('/admin/resturent/delete/{id}', 'Resturent@delete');
+		Route::get('/admin/resturent/edit/{id}', 'Resturent@edit');
+		Route::post('/admin/resturent/edit/{id}', 'Resturent@addedit');
 
 	});
 
