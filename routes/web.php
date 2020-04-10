@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return view('home.index');
-});
+Route::get('/', 'landing@index');
 
 
 Route::get('/error', function()
@@ -51,7 +48,9 @@ Route::group(['middleware'=>['session']], function(){
 		
 		
 		Route::get('/mamber', 'MamberHome@index');
-		
+		Route::get('/mamber/profile', 'MamberHome@profile');
+		Route::post('/mamber/profile', 'MamberHome@profileUpdate');
+		Route::get('/mamber/resturent/resturentlist', 'Resturent@resturentlistmamber');
 		
 
 	});
