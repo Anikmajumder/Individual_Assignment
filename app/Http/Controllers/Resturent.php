@@ -66,5 +66,47 @@ class Resturent extends Controller
     	}
 	}
 
-	
+	public function delete($id)
+	{
+		$user = resturentmodel::destroy($id);
+		return view('resturent.resturentlist');
+	}
+
+	public function addedit(Request $req)
+    {
+    	$validate = Validator::make($req->all(), [
+            'name' => 'required|max:20',
+            'foodname' => 'required|max:10',
+			'rate' => 'required',
+			'comment' => 'required'
+            
+        ]);
+
+    	if ($validate->fails()) {
+    		return redirect('/admin/resturent/resturentlist')
+                        ->withErrors($validate)
+                        ->withInput();
+    	}
+    	else
+    	{
+    		$user = new resturentmodel;
+            
+            $user->name = $req->name;
+            $user->foodname = $req->foodname;
+			$user->rate = $req->rate;
+			$user->borrow = NULL;
+			$user->comment = $req->comment;
+			$user->id = NULL;
+            
+
+            if ($user->save()) {
+                return redirect('/admin/resturent/resturentlist');
+            }               
+            else
+            {
+                return redirect('/Resturent add failed')
+                                ->withErrors('Resturnet add failid');
+            }
+    	}
+	}
 }
