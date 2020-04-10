@@ -66,6 +66,10 @@ class AdminHome extends Controller
 
    		return view('admin.mamberlist',['details'=>$data]);
    	}
-
+	   public function deletemamber($id)
+   	{
+   		$user = User::destroy($id);
+   		return redirect('/admin/mamberlist')->withErrors("User deleted");
+   	}
 
 }
