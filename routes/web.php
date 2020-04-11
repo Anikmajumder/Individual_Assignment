@@ -51,6 +51,9 @@ Route::group(['middleware'=>['session']], function(){
 		Route::get('/mamber/profile', 'MamberHome@profile');
 		Route::post('/mamber/profile', 'MamberHome@profileUpdate');
 		Route::get('/mamber/resturent/resturentlist', 'Resturent@resturentlistmamber');
+		Route::get('/mamber/resturent/borrow/{id}', 'Resturent@borrow');
+		Route::post('/mamber/resturent/borrow/{id}', 'Resturent@borrowedit');
+		
 		
 
 	});
