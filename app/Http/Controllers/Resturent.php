@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Subcategory;
+use App\Borrow;
 use App\resturentmodel;
 
 class Resturent extends Controller
@@ -16,7 +16,10 @@ class Resturent extends Controller
 	public function edit($id){
         $user = resturentmodel::find($id);
         return view('resturent.editresturent', $user);
-    }
+	}
+	
+	
+	
 	
 	public function resturentlist()
    	{
@@ -24,6 +27,12 @@ class Resturent extends Controller
 
    		return view('resturent.resturentlist',['details'=>$data]);
 	 }
+	 public function resturentlistmamber()
+	 {
+		 $data = resturentmodel::all();
+
+		 return view('mamber.resturentlist',['details'=>$data]);
+   }
 	   public function addresturent()
    	{
 		return view('resturent.Addresturent');
@@ -109,4 +118,8 @@ class Resturent extends Controller
             }
     	}
 	}
+
+
+	
+	
 }
