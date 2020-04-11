@@ -18,7 +18,10 @@ class Resturent extends Controller
         return view('resturent.editresturent', $user);
 	}
 	
-	
+	public function borrow($id){
+        $user = resturentmodel::find($id);
+        return view('mamber.borrow', $user);
+    }
 	
 	
 	public function resturentlist()
@@ -120,6 +123,42 @@ class Resturent extends Controller
 	}
 
 
-	
+	public function borrowedit($id,Request $req)
+    {
+    	$validate = Validator::make($req->all(), [
+            
+			'comment' => 'required'
+            
+        ]);
+
+    	if ($validate->fails()) {
+    		return redirect('/mamber/resturent/resturentlist')
+                        ->withErrors($validate)
+                        ->withInput();
+    	}
+    	else
+    	{
+    		
+            
+			$user = Borrow::find($id);
+			
+			$user->borrow += 1;
+            
+			$user->comment = $req->comment;
+			
+            
+
+            if ($user->save()) {
+                return view('mamber.order');
+            }               
+            else
+            {
+                return redirect('/mamber/resturent/borrow ')
+                                ->withErrors('order place failid');
+            }
+    	}
+	}
+
+
 	
 }

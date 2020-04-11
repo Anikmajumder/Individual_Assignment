@@ -21,8 +21,7 @@
 				<td>{{$details[$i]['rate']}}</td>
                 <td>{{$details[$i]['borrow']}}</td>
                 <td>{{$details[$i]['comment']}}</td>
-				<td><a href="/admin/resturent/edit/{{$details[$i]['id']}}">Edit</a></td>
-				<td><a href="/admin/resturent/delete/{{$details[$i]['id']}}">Delete</a></td>
+				<td><a href="/mamber/resturent/borrow/{{$details[$i]['id']}}">Borrow</a></td>
 			</tr>
 		@endfor
 	</table>
