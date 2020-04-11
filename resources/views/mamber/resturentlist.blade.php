@@ -6,6 +6,15 @@
 <body>
 
 	<h1>Resturent List</h1>
+	<form action="/mamber/search" method="get">    
+	
+	<input type="search" name="search" placeholder="search with food name"></input>
+	<button type="submit">Search</button>
+	
+	</form>
+	<br>
+	
+	
 	<table border="1">
 		<tr>
 			<th>Resturent Name</th>

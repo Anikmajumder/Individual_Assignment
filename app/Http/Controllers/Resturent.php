@@ -23,7 +23,14 @@ class Resturent extends Controller
         return view('mamber.borrow', $user);
     }
 	
-	
+	public function search(Request $request)
+   	{
+		   $search=$request->get('search');
+
+   		$data = resturentmodel::where('foodname','like','%'.$search.'%')->paginate(5);
+
+   		return view('mamber.resturentlist',['details'=>$data]);
+	 }
 	public function resturentlist()
    	{
    		$data = resturentmodel::all();

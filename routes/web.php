@@ -53,7 +53,7 @@ Route::group(['middleware'=>['session']], function(){
 		Route::get('/mamber/resturent/resturentlist', 'Resturent@resturentlistmamber');
 		Route::get('/mamber/resturent/borrow/{id}', 'Resturent@borrow');
 		Route::post('/mamber/resturent/borrow/{id}', 'Resturent@borrowedit');
-		
+		Route::get('/mamber/search', 'Resturent@search');
 		
 
 	});
